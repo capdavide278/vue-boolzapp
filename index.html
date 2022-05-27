@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>boolzapp</title>
+</head>
+<body>  
+    <div id="app" class="container">
+        <div class="row">
+
+            <div  class="col-4 p-0">
+                <div class="vh-100 light-gray">
+                    <!-- profilo -->
+                    <div class="col-12">
+                        <div class="display-inline-block">
+                            <img src="me.jpeg" alt=""> 
+                            <span>Davide</span>
+                        </div>
+                        <div class="float-right display-inline-block mt-14">
+                            <i class="fa-solid fa-circle-notch"></i>
+                            <i class="fa-solid fa-message"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <!-- silenzia chat -->
+                    <div class="col-12 bg-primary">
+                        <div class="float-left ">
+                            <i class="fa-solid fa-bell-slash bell"></i>
+                        </div>
+                        <div>
+                            Ricevi notifiche nuovo messaggio
+                        </div>
+                    </div>
+
+                    <!-- form -->
+                    <div class="col-12">
+                        <form>
+                            <input class="search" type="text">
+                        </form>
+                    </div>
+                    <div v-for="(element, index) in contacts " :key="index" >
+                        <div class="col-12">
+                            <div class="display-inline-block">
+                                <img :src="element.avatar" alt=""> 
+                                <span>{{element.name}}</span>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+
+
+                </div>
+
+
+            </div>
+
+            <div class="col-8 p-0 ">
+                <div class="vh-100 light-green">
+                    <div class="col-12 bg-grey">
+                        <div class="display-inline-block">
+                            <img src="#" alt=""> 
+                            <span>Wade w</span>
+                        </div>
+                        <div class="float-right display-inline-block mt-14">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-paperclip"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+
+                    <div class="text">
+                        <input class="messaggio" type="text">
+                   </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
