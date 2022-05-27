@@ -29,7 +29,7 @@
                     </div>
                     <!-- silenzia chat -->
                     <div class="col-12">
-                        <div class="centrato bell-vertical">
+                        <div class="centrato bell-vertical sfondo-silenzia">
                             <div id="bell">
                                 <i class="fa-solid fa-bell-slash"></i>
                             </div>
@@ -38,7 +38,7 @@
                                     Ricevi notifiche di nuovi messaggi
                                 </div>
                                 <div>
-                                    <a href="#"> Attiva notifiche desktop</a>
+                                    <a href="#" id="desktop"> Attiva notifiche desktop</a>
                                 </div>
                             </div>
                         </div>
@@ -46,9 +46,10 @@
 
                     <!-- form -->
                     <div class="col-12">
-                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                        <input class="search" type="text" placeholder="Cerca contatto">
-                        
+                        <div class="centrato bell-vertical">
+                            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <input class="search" type="text" placeholder="Cerca contatto">
+                        </div>
                     </div>
                     <div v-for="(element, index) in contacts " :key="index" >
                         <div class="col-12">
@@ -61,15 +62,11 @@
 
                     </div>
 
-
-
-
                 </div>
-
 
             </div>
 
-            <div class="col-8 p-0 ">
+            <div class="col-8 p-0">
                 <div class="vh-100 light-green">
                     <div class="col-12 bg-grey">
                         <div class="display-inline-block">
@@ -83,9 +80,13 @@
                         </div>
                     </div>
 
-                    <div class="text">
-                        <input class="messaggio" type="text">
-                   </div>
+                    <!-- container messaggi -->
+                    
+                    <div id="barra">
+                        <i class="fa-solid fa-face-smile"></i>
+                        <input class="messaggio" type="text" placeholder="scrivi un messaggio">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
 
                 </div>
 
