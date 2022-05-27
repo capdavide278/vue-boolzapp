@@ -28,20 +28,27 @@
                         </div>
                     </div>
                     <!-- silenzia chat -->
-                    <div class="col-12 bg-primary">
-                        <div class="float-left ">
-                            <i class="fa-solid fa-bell-slash bell"></i>
-                        </div>
-                        <div>
-                            Ricevi notifiche nuovo messaggio
+                    <div class="col-12">
+                        <div class="centrato bell-vertical">
+                            <div id="bell">
+                                <i class="fa-solid fa-bell-slash"></i>
+                            </div>
+                            <div>
+                                <div>
+                                    Ricevi notifiche di nuovi messaggi
+                                </div>
+                                <div>
+                                    <a href="#"> Attiva notifiche desktop</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <!-- form -->
                     <div class="col-12">
-                        <form>
-                            <input class="search" type="text">
-                        </form>
+                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <input class="search" type="text" placeholder="Cerca contatto">
+                        
                     </div>
                     <div v-for="(element, index) in contacts " :key="index" >
                         <div class="col-12">
