@@ -17,6 +17,7 @@
     background-image: url('https://static.privatesportshop.com/img/p/2553889-7838514-thickbox.jpg');
     background-repeat: no-repeat;
     background-size: 880px 1000px;
+    position: relative;
 }
 
 .p-0 {
@@ -93,10 +94,14 @@ i {
     justify-content: space-between;
 }
 
+
 #barra{
     margin-top: 632px;
     background-color: #f3eeea;
     height: 34px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
 }
 
 .fa-face-smile, .fa-microphone{
