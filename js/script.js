@@ -196,14 +196,25 @@ const app = new Vue ({
 
         aggiungimes() {
             const nuovo_mes = {
-                message: this.nuovoMes
+                message: this.nuovoMes,
+                status : 'sent'
             }
 
             if (this.nuovoMes !== "") {
-                this.contacts.push(nuovo_mes);
+                this.contacts[this.chatactive].messages.push(nuovo_mes);
                 this.nuovoMes = "";
             }
-        }
+
+            setTimeout(this.risposta_bot, 1000);
+        },
+
+        risposta_bot(){
+            const message = {
+                message : 'Okay amico!',
+                status : 'received',
+            };
+            this.contacts[this.chatactive].messages.push(message);
+        },
     },
 
 });
