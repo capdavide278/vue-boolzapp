@@ -67,7 +67,7 @@
             </div>
 
             <div class="col-8 p-0">
-                <div class="vh-100 light-green">
+                <div class="vh-100 sfondo">
                     <div class="col-12 bg-grey">
                         <div class="display-inline-block">
                             <img :src="contacts[chatactive].avatar" alt=""> 
@@ -82,13 +82,13 @@
 
                     <!-- container messaggi -->
                     <div  id="container-conversazione">
-                        <div  v-for="aMessage in contacts[chatactive].messages">
-                            <div  :class="sentOReceived(aMessage.status)">
-                                <div :class="sentOReceivedColor(aMessage.status)">
-                                {{aMessage.message}}
+                            <div  v-for="aMessage in contacts[chatactive].messages">
+                                <div  :class="sentOReceived(aMessage.status)">
+                                    <div :class="sentOReceivedColor(aMessage.status)">
+                                    {{aMessage.message}}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                     </div>
 
                     <!-- input messaggi -->
