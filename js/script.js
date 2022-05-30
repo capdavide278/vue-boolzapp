@@ -1,6 +1,7 @@
 const app = new Vue ({
     el: "#app",
     data: {
+        nuovoMes : "",
         chatactive : 0,
         contacts: [
             {
@@ -192,6 +193,17 @@ const app = new Vue ({
                 return "messaggio-inviato";
             }
         },
+
+        aggiungimes() {
+            const nuovo_mes = {
+                message: this.nuovoMes
+            }
+
+            if (this.nuovoMes !== "") {
+                this.contacts.push(nuovo_mes);
+                this.nuovoMes = "";
+            }
+        }
     },
 
 });

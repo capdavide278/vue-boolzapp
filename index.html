@@ -27,6 +27,7 @@
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
                     </div>
+
                     <!-- silenzia chat -->
                     <div class="col-12">
                         <div class="centrato bell-vertical sfondo-silenzia">
@@ -82,10 +83,10 @@
 
                     <!-- container messaggi -->
                     <div  id="container-conversazione">
-                            <div  v-for="aMessage in contacts[chatactive].messages">
-                                <div  :class="sentOReceived(aMessage.status)">
-                                    <div :class="sentOReceivedColor(aMessage.status)">
-                                    {{aMessage.message}}
+                            <div  v-for="activMessage in contacts[chatactive].messages">
+                                <div  :class="sentOReceived(activMessage.status)">
+                                    <div :class="sentOReceivedColor(activMessage.status)">
+                                    {{activMessage.message}}
                                     </div>
                                 </div>
                             </div>
@@ -94,18 +95,14 @@
                     <!-- input messaggi -->
                     <div id="barra">
                         <i class="fa-solid fa-face-smile"></i>
-                        <input class="messaggio" type="text" placeholder="scrivi un messaggio">
+                        <input class="scrivi-messaggio" type="text" placeholder="scrivi un messaggio" v-model="nuovoMes" @keyup.enter="aggiungimes">
                         <i class="fa-solid fa-microphone"></i>
                     </div>
-
                 </div>
 
             </div>
         </div>
     </div>
-
-
-
 
 
 
