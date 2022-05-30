@@ -100,17 +100,45 @@ i {
 }
 
 #barra{
-    margin-top: 92%;
+    margin-top: 648px;
     background-color: #f3eeea;
-    height: 32px;
+    height: 34px;
 }
 
 .fa-face-smile, .fa-microphone{
     color: #6b7376;
 }
 
-#sfondo{
-    z-index: 5;
-    height: 10%;
-    width: 100%;
+.mw-50 {
+    background-color: rgb(255, 0, 0);
+    max-width: 50%;
+
+}
+
+.destro {
+
+    padding: 5px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sinistro {
+
+    padding: 5px;
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.messaggio-inviato {
+    background-color: lightgreen;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.messaggio-ricevuto {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+
 }

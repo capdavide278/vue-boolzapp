@@ -52,7 +52,7 @@
                         </div>
                     </div>
                     <div v-for="(element, index) in contacts " :key="index" >
-                        <div class="col-12">
+                        <div class="col-12"  @click="changeChat(index)">
                             <div class="display-inline-block">
                                 <img :src="element.avatar" alt=""> 
                                 <span>{{element.name}}</span>
@@ -70,8 +70,8 @@
                 <div class="vh-100 light-green">
                     <div class="col-12 bg-grey">
                         <div class="display-inline-block">
-                            <img src="#" alt=""> 
-                            <span>Wade w</span>
+                            <img :src="contacts[chatactive].avatar" alt=""> 
+                            <span>{{contacts[chatactive].name}}</span>
                         </div>
                         <div class="float-right display-inline-block mt-14">
                             <i class="fa-solid fa-magnifying-glass"></i>
@@ -81,7 +81,17 @@
                     </div>
 
                     <!-- container messaggi -->
-                    
+                    <div  id="container-conversazione">
+                        <div  v-for="aMessage in contacts[chatactive].messages">
+                            <div  :class="sentOReceived(aMessage.status)">
+                                <div :class="sentOReceivedColor(aMessage.status)">
+                                {{aMessage.message}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- input messaggi -->
                     <div id="barra">
                         <i class="fa-solid fa-face-smile"></i>
                         <input class="messaggio" type="text" placeholder="scrivi un messaggio">

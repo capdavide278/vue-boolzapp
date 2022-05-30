@@ -1,6 +1,7 @@
 const app = new Vue ({
     el: "#app",
     data: {
+        chatactive : 0,
         contacts: [
             {
                 name: 'Wade w',
@@ -165,11 +166,32 @@ const app = new Vue ({
             }
         ]
     
-    }
+    },
+
+    methods: {
+
+        changeChat(chatactive) {
+        this.chatactive = chatactive;
+        },
+
+        sentOReceived(status) {
+
+            if (status == "received") {
+                return "sinistro messaggio"
+            } else {
+                return "destro messaggio";
+            }
+        },
 
 
+        sentOReceivedColor(status) {
 
-
-
+            if (status == "received") {
+                return "messaggio-ricevuto";
+            } else {
+                return "messaggio-inviato";
+            }
+        },
+    },
 
 });
