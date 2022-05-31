@@ -98,7 +98,7 @@ i {
 #barra{
     margin-top: 632px;
     background-color: #f3eeea;
-    height: 34px;
+    /* height: 34px; */
     width: 100%;
     position: absolute;
     bottom: 0px;
@@ -138,4 +138,8 @@ i {
 
 #container-conversazione{
     padding-top: 15px;
+}
+
+.contatto_invisibile{
+    display: none;
 }

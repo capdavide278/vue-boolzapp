@@ -49,11 +49,11 @@
                     <div class="col-12">
                         <div class="centrato bell-vertical">
                             <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                            <input class="search" type="text" placeholder="Cerca contatto">
+                            <input class="search" type="text" placeholder="Cerca contatto" @keyup="trova_am()" v-model="nuovoamico">
                         </div>
                     </div>
-                    <div v-for="(element, index) in contacts " :key="index" >
-                        <div class="col-12"  @click="changeChat(index)">
+                    <div v-for="(element, index) in contacts " :key="index" v-if="element.visible === true">
+                        <div class="col-12"  @click="changeChat(index)" >
                             <div class="display-inline-block">
                                 <img :src="element.avatar" alt=""> 
                                 <span>{{element.name}}</span>
