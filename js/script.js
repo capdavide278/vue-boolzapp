@@ -3,6 +3,7 @@ const app = new Vue ({
     data: {
         nuovoMes : "",
         chatactive : 0,
+        nuovoamico : "",
         contacts: [
             {
                 name: 'Wade w',
@@ -29,7 +30,7 @@ const app = new Vue ({
             {
                 name: 'Logan',
                 avatar: 'https://www.gamelegends.it/wp-content/uploads/2019/02/geekenderwolverine.jpg',
-                visible: false,
+                visible: true,
                 messages: [
                     {
                         date: '20/03/2020 16:30:00',
@@ -51,7 +52,7 @@ const app = new Vue ({
             {
                 name: 'Tony (vivo)',
                 avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUn7FSyBSOYfd4LakAorD8BwBTWxrgobtXCw&usqp=CAU',
-                visible: false,
+                visible: true,
                 messages: [
                     {
                         date: '28/03/2020 10:10:40',
@@ -73,7 +74,7 @@ const app = new Vue ({
             {
                 name: 'Occhio di falco',
                 avatar: 'https://www.cinematographe.it/wp-content/uploads/2019/07/hawkeye-jeremy-renner-immagine-logo.jpg',
-                visible: false,
+                visible: true,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -90,7 +91,7 @@ const app = new Vue ({
             {
                 name: 'Natasha la bagasha',
                 avatar: 'https://lumiere-a.akamaihd.net/v1/images/image_b97b56f3.jpeg?region=0%2C0%2C540%2C810',
-                visible: false,
+                visible: true,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -107,7 +108,7 @@ const app = new Vue ({
             {
                 name: 'johnny fuochino',
                 avatar: 'https://static.wikia.nocookie.net/marveldatabase/images/8/88/Fantastic_Four_Vol_6_1_Human_Torch_Variant_Textless.jpg/revision/latest?cb=20180523100956',
-                visible: false,
+                visible: true,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -129,7 +130,7 @@ const app = new Vue ({
             {
                 name: 'Ghost rider',
                 avatar: 'https://images.everyeye.it/img-notizie/ghost-rider-marvel-studios-sanno-versione-esordira-mcu-v3-559790-900x900.webp',
-                visible: false,
+                visible: true,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -146,7 +147,7 @@ const app = new Vue ({
             {
                 name: 'Spider man',
                 avatar: 'https://s.yimg.com/ny/api/res/1.2/ZW6niqwURxeqE00_OFxfaQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTM0MA--/https://s.yimg.com/uu/api/res/1.2/tiy2rhWqXLV.I929V5tfLQ--~B/aD00MjU7dz04MDA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/nextshark_articles_509/3fc6d14c9d6c8911636b3cdfac642585',
-                visible: false,
+                visible: true,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -215,6 +216,14 @@ const app = new Vue ({
             };
             this.contacts[this.chatactive].messages.push(message);
         },
-    },
+
+        trova_am(){
+            this.contacts.forEach((contact, i) => {
+                if (contact.name.toLowerCase().search(this.nuovoamico.toLowerCase()) == -1) {
+                    contact.visible = false;
+                }
+            });
+        }
+    }
 
 });
